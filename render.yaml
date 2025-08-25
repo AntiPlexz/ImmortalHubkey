@@ -1,0 +1,16 @@
+services:
+  - type: worker
+    name: immortalhubkey
+    env: python
+    plan: free
+    autoDeploy: true
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: DISCORD_BOT_TOKEN
+        sync: false
+      - key: LOG_LEVEL
+        value: INFO
+      # Optional: uncomment for instant slash commands during testing
+      # - key: GUILD_ID
+      #   value: "123456789012345678"
