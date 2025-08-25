@@ -8,9 +8,13 @@ services:
     startCommand: python main.py
     envVars:
       - key: DISCORD_BOT_TOKEN
-        sync: false
+        sync: false   # add in dashboard
+      - key: APPLICATION_ID
+        sync: false   # your bot's application ID
       - key: LOG_LEVEL
         value: INFO
-      # Optional: uncomment for instant slash commands during testing
+      - key: EPHEMERAL_RESPONSES
+        value: "true"
+      # Optional, for fast slash sync:
       # - key: GUILD_ID
       #   value: "123456789012345678"
